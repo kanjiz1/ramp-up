@@ -26,3 +26,5 @@ DerivedData
 *.dSYM.zip
 *.dSYM
 .build/
+*.dae
+*.png
