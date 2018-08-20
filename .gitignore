@@ -27,4 +27,5 @@ DerivedData
 *.dSYM
 .build/
 *.dae
+*.jpg
 *.png

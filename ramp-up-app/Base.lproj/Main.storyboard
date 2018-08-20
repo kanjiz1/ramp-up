@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,12 +25,25 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-dv-m7e">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5he-LY-2Gf">
+                                <rect key="frame" x="262" y="586" width="107" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="Lac-RM-fH0"/>
+                                    <constraint firstAttribute="height" constant="71" id="V2I-5k-5cD"/>
+                                </constraints>
+                                <state key="normal" image="rampIcon"/>
+                                <connections>
+                                    <action selector="onRampBtnPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="095-1k-GDx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fiX-io-7Va" firstAttribute="top" secondItem="dy0-dv-m7e" secondAttribute="bottom" id="8FB-Mq-YIo"/>
                             <constraint firstAttribute="trailing" secondItem="dy0-dv-m7e" secondAttribute="trailing" id="Jk7-AG-JjP"/>
+                            <constraint firstItem="fiX-io-7Va" firstAttribute="top" secondItem="5he-LY-2Gf" secondAttribute="bottom" constant="10" id="Sxk-t9-ay8"/>
                             <constraint firstItem="dy0-dv-m7e" firstAttribute="top" secondItem="kd8-Mk-iHm" secondAttribute="top" id="Vsu-OE-BgM"/>
+                            <constraint firstItem="5he-LY-2Gf" firstAttribute="trailing" secondItem="kd8-Mk-iHm" secondAttribute="trailingMargin" constant="10" id="fOb-ys-2gT"/>
                             <constraint firstItem="dy0-dv-m7e" firstAttribute="leading" secondItem="kd8-Mk-iHm" secondAttribute="leading" id="vRn-ei-Tpe"/>
                         </constraints>
                     </view>
@@ -42,4 +56,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rampIcon" width="107" height="71"/>
+    </resources>
 </document>

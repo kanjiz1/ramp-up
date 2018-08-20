@@ -13,6 +13,7 @@
 		CDCC21B22125204800103C61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCC21B02125204800103C61 /* Main.storyboard */; };
 		CDCC21B42125204900103C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCC21B32125204900103C61 /* Assets.xcassets */; };
 		CDCC21B72125204900103C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCC21B52125204900103C61 /* LaunchScreen.storyboard */; };
+		CDCC21C02125349D00103C61 /* RampPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCC21BF2125349D00103C61 /* RampPickerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CDCC21B32125204900103C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDCC21B62125204900103C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDCC21B82125204900103C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCC21BF2125349D00103C61 /* RampPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RampPickerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				CDCC21AE2125204800103C61 /* RampPlacerVC.swift */,
+				CDCC21BF2125349D00103C61 /* RampPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCC21AF2125204800103C61 /* RampPlacerVC.swift in Sources */,
+				CDCC21C02125349D00103C61 /* RampPickerVC.swift in Sources */,
 				CDCC21AB2125204800103C61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
