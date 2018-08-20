@@ -13,6 +13,7 @@ import ARKit
 class RampPlacerVC: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    var selectedRamp: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,8 @@ class RampPlacerVC: UIViewController {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/pipe.dae")!
+        let scene = SCNScene(named: "art.scnassets/main.scn")!
+        sceneView.autoenablesDefaultLighting = true
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -67,6 +69,17 @@ class RampPlacerVC: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {return}
+        
+        let results = sceneView.hitTest(touch.location(in: sceneView), types: .featurePoint)
+        
+        guard let hitFeature = results.last else { return }
+        let hitTransform = SCNMatrix4(hitFeature.worldTransform)
+        let hitPosition = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
+        placeRamp(position: hitPosition)
+    }
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -82,7 +95,16 @@ class RampPlacerVC: UIViewController {
     }
     
     func onRampSelected(_ rampName: String){
-        
+        selectedRamp = rampName
+    }
+    
+    func placeRamp(position: SCNVector3){
+        if let rampName = selectedRamp{
+            let ramp = Ramp.getRampForName(rampName: rampName)
+            ramp.position = position
+            ramp.scale = SCNVector3Make(0.01, 0.01, 0.01)
+            sceneView.scene.rootNode.addChildNode(ramp)
+        }
     }
     
 }
